@@ -4,7 +4,7 @@ A Flask-based web application that extracts text from handwritten images using O
 
 ---
 
-## 📸 Demo
+
 
 ### 🏠 Home Page
 
@@ -96,8 +96,8 @@ http://127.0.0.1:5000
 
 ## ⚠️ Notes
 
-* EasyOCR models may download during first run.
-* AI features are optional and require a Gemini API key.
+* Download the neccessary external modules (EASYOCR) during first run.
+* AI features require a Gemini API key.
 * Sensitive files and large models are excluded using `.gitignore`.
 
 ---
