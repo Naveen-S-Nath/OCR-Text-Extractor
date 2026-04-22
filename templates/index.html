@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Based Text Extractor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L1.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.25 12L17 14.188l-1.25-2.188L13.563 11l2.188-1.25L17 7.563l1.25 2.188L20.438 11l-2.188 1.25z" />
+            </svg>
+        </div>
+
+        <h1>OCR Based Text Extractor</h1>
+        <p>Upload a handwritten image (JPG/PNG). The text will be extracted. (Additional Features: The Extracted text is corrected and answered in case of a question.)</p>
+        <div class="button-container">
+            <a href="{{ url_for('upload_page') }}" class="btn">🚀 Start Now</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Accurate OCR</h3>
+                <p>Pulls text from any handwritten note with high precision.</p>
+            </div>
+            <div class="feature-item">
+                <h3>AI Correction</h3>
+                <p>Fixes spelling, grammar, and errors based on context.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Smart Q&A</h3>
+                <p>Automatically detects questions and provides answers.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

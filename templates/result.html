@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container wide-container">
+        <a href="{{ url_for('index') }}" class="back-link">&larr; Start Over</a>
+        <h1>Enhanced Text & AI Response</h1>
+
+        <div class="result-grid-container {% if answer %}three-columns{% endif %}">
+            
+            <div class="result-column">
+                <h3>Raw OCR Text</h3>
+                <div class="result-box">
+                    <pre id="raw-text">{{ raw_text }}</pre>
+                </div>
+            </div>
+
+            <div class="result-column">
+                <h3>AI-Enhanced Text</h3>
+                <div class="result-box">
+                    <pre id="corrected-text">{{ corrected_text }}</pre>
+                </div>
+            </div>
+
+            {% if answer %}
+            <div class="result-column">
+                <h3>🤖 AI Answer</h3>
+                <div class="result-box answer-box">
+                    <pre id="answer-text">{{ answer }}</pre>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="button-container">
+            <button id="copy-btn" class="btn btn-secondary">📄 Copy All Text</button>
+            <a href="{{ url_for('download_text') }}" class="btn">💾 Download All as .txt</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('copy-btn').addEventListener('click', () => {
+            let textToCopy = "--- RAW OCR TEXT ---\n";
+            textToCopy += document.getElementById('raw-text').innerText;
+            
+            textToCopy += "\n\n--- AI-ENHANCED TEXT ---\n";
+            textToCopy += document.getElementById('corrected-text').innerText;
+
+            // Check if the answer element exists on the page
+            const answerEl = document.getElementById('answer-text');
+            if (answerEl) {
+                textToCopy += "\n\n--- AI ANSWER ---\n";
+                textToCopy += answerEl.innerText;
+            }
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('All text copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy text.');
+            });
+        });
+    </script>
+</body>
+</html>

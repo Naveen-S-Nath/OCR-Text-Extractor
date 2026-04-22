@@ -1,0 +1,8 @@
+Flask
+easyocr
+torch
+torchvision
+Pillow
+python-dotenv
+pdf2image
+numpy
