@@ -10,14 +10,14 @@ A Flask-based web application that extracts text from handwritten images using O
 
 <p align="center">
   <img width="1681" height="850" alt="image" src="https://github.com/user-attachments/assets/548ebcad-84bc-4b90-8e92-eeddb3fda297" />
-" />
+
 </p>
 
 ### 📤 Upload Page
 
 <p align="center">
   <img width="772" height="537" alt="image" src="https://github.com/user-attachments/assets/5e56ac3d-071e-418d-baa4-4d8df99e7aad" />
-" />
+
 </p>
 
 ---
